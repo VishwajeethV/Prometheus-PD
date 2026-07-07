@@ -35,36 +35,19 @@
           </p>
         </div>
         <div class="hero-visual" id="heroVisual" aria-hidden="true">
-          <!-- minimal crafted hero SVG -->
-          <svg viewBox="0 0 800 640" preserveAspectRatio="xMidYMid slice" class="hero-svg" role="img" aria-label="Rocket above earth horizon">
-            <defs>
-              <linearGradient id="gSky" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#020617"/>
-                <stop offset="100%" stop-color="#07101f"/>
-              </linearGradient>
-              <linearGradient id="gArc" x1="0" x2="1">
-                <stop offset="0%" stop-color="#E8A020"/><stop offset="100%" stop-color="#F5C060"/>
-              </linearGradient>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#gSky)"/>
-            <g fill="#fff" fill-opacity="0.08">
-              <circle cx="60" cy="40" r="1.2"/><circle cx="120" cy="90" r="1"/>
-              <circle cx="440" cy="60" r="1.4"/><circle cx="700" cy="120" r="1"/>
-            </g>
-            <path d="M40 520 Q400 120 760 520" stroke="url(#gArc)" stroke-opacity="0.06" stroke-width="2" fill="none"/>
-            <g transform="translate(320,120)">
-              <path d="M40 0 L66 72 L40 64 L14 72 Z" fill="#0b0b0b"/>
-              <rect x="30" y="64" width="20" height="70" rx="6" fill="#0b0b0b"/>
-              <circle cx="40" cy="150" r="14" fill="#E8A020"/>
-            </g>
-          </svg>
+          <!-- Improved hero visualization -->
+          <div class="hero-graphic">
+            <div class="earth"></div>
+            <div class="rocket-path"></div>
+            <div class="rocket-icon">🚀</div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="story" class="section card center">
       <h2>Why VH4 Aerospace exists</h2>
-      <p>Prometheus-1 provides domestic access to suborbital flight in India. The deck documents a gap: India has 3.5 lakh+ dollar millionaires and zero domestic operators. IN-SPACe policy enables private launch — VH4 intends to be the first-mover using a fully Indian-designed suborbital vehicle.</p>
+      <p>Prometheus-1 provides domestic access to suborbital flight in India. The deck documents a gap: India has 3.5 lakh+ dollar millionaires and zero domestic operators. IN-SPACe policy enables private operators to build and fly.</p>
     </section>
 
     <section id="problem" class="section">
@@ -136,10 +119,8 @@
         </div>
 
         <div class="timeline-visual">
-          <div class="rocket-track" id="rocketTrack" aria-hidden="true">
-            <div id="rocket" class="rocket" title="Rocket preview">
-              <svg width="36" height="60" viewBox="0 0 48 80" aria-hidden="true"><path d="M24 6 L34 30 L24 26 L14 30 Z" fill="currentColor"/><rect x="20" y="26" width="8" height="24" rx="2" fill="currentColor"/><circle cx="24" cy="56" r="6" fill="#E8A020"/></svg>
-            </div>
+          <div class="progress-bar" id="progressBar" aria-hidden="true">
+            <div class="progress-fill"></div>
           </div>
         </div>
       </div>
