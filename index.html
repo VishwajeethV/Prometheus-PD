@@ -3,94 +3,144 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>VH4 Aerospace — Prometheus</title>
+  <title>VH4 Aerospace — Prometheus-1</title>
   <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Prometheus-1 — India's first private suborbital space tourism vehicle." />
 </head>
 <body>
-  <header class="nav frosted" role="banner">
-    <div class="nav-inner">
-      <img id="logo" src="assets/logo-transparent.svg" alt="VH4 Aerospace" class="logo" />
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#story">Why VH4</a>
-        <a href="#solution">Solution</a>
-        <a href="#timeline">Roadmap</a>
-        <a href="#funding">Funding</a>
-      </nav>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="assets/logo-transparent.svg" alt="VH4 Aerospace" />
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#about">Mission</a></li>
+        <li><a href="#vehicle">Vehicle</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#investors">Investors</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
       <div class="nav-actions">
-        <button id="themeToggle" aria-label="Toggle theme (press T)" aria-keyshortcuts="T" class="icon-btn"></button>
+        <button id="themeToggle" class="theme-btn" aria-label="Toggle dark/light theme"></button>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="page">
-    <section id="hero" class="section hero" aria-labelledby="hero-title">
-      <div class="container hero-grid">
-        <div>
-          <h1 id="hero-title">Zero gravity.<br /><span class="accent">Indian made.</span></h1>
-          <p class="lede">Prometheus-1 is India's first private suborbital space tourism vehicle — built for the Kármán Line, built for reuse, built in India.</p>
-          <p class="hero-ctas">
-            <a class="btn primary" href="#solution">Explore</a>
-            <a class="btn" href="VH4_Aerospace_PitchDeck.html" download>Investor Deck</a>
-          </p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Zero Gravity</h1>
+        <h2>Indian Built</h2>
+        <p class="hero-subtitle">Prometheus-1: India's first private suborbital space tourism vehicle</p>
+        <div class="hero-buttons">
+          <a href="#vehicle" class="btn btn-primary">Explore</a>
+          <a href="VH4_Aerospace_PitchDeck.html" class="btn btn-secondary">Investor Deck</a>
         </div>
-        <div class="hero-visual" id="heroVisual" aria-hidden="true">
-          <!-- Improved hero visualization -->
-          <div class="hero-graphic">
-            <div class="earth"></div>
-            <div class="rocket-path"></div>
-            <div class="rocket-icon">🚀</div>
+        <div class="hero-specs">
+          <div class="spec">
+            <span class="spec-value">120 km</span>
+            <span class="spec-label">Apogee</span>
+          </div>
+          <div class="spec">
+            <span class="spec-value">2.7 min</span>
+            <span class="spec-label">Weightlessness</span>
+          </div>
+          <div class="spec">
+            <span class="spec-value">₹15L</span>
+            <span class="spec-label">Ticket Price</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="glow-orb"></div>
+        <div class="glow-ring"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Why Prometheus-1</h2>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>₹3.5+ Lakh</h3>
+            <p>Indian millionaires with no domestic access to suborbital flight</p>
+          </div>
+          <div class="about-card">
+            <h3>0 Operators</h3>
+            <p>Domestic suborbital tourism companies in India today</p>
+          </div>
+          <div class="about-card">
+            <h3>Open Window</h3>
+            <p>IN-SPACe policy enables first-mover advantage for private operators</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="story" class="section card center">
-      <h2>Why VH4 Aerospace exists</h2>
-      <p>Prometheus-1 provides domestic access to suborbital flight in India. The deck documents a gap: India has 3.5 lakh+ dollar millionaires and zero domestic operators. IN-SPACe policy enables private operators to build and fly.</p>
-    </section>
+    <!-- Vehicle Section -->
+    <section id="vehicle" class="vehicle">
+      <div class="container">
+        <h2>The Vehicle</h2>
+        <div class="vehicle-content">
+          <div class="vehicle-specs">
+            <h3>Prometheus-1 Specifications</h3>
+            <div class="spec-list">
+              <div class="spec-item">
+                <span class="label">Configuration</span>
+                <span class="value">Single-stage, 1-passenger suborbital rocket</span>
+              </div>
+              <div class="spec-item">
+                <span class="label">Propulsion</span>
+                <span class="value">N₂O / Paraffin hybrid (27.5 kN, 225.7s Isp)</span>
+              </div>
+              <div class="spec-item">
+                <span class="label">Apogee</span>
+                <span class="value">120 km (past the Kármán Line)</span>
+              </div>
+              <div class="spec-item">
+                <span class="label">Weightlessness</span>
+                <span class="value">2.7 minutes continuous zero-gravity</span>
+              </div>
+              <div class="spec-item">
+                <span class="label">Acceleration</span>
+                <span class="value">&lt; 2.5g peak</span>
+              </div>
+              <div class="spec-item">
+                <span class="label">Reusability</span>
+                <span class="value">Recovered & reflown within 2 weeks</span>
+              </div>
+            </div>
+          </div>
 
-    <section id="problem" class="section">
-      <div class="grid3">
-        <article class="card"><h3>Nearest seat is abroad</h3><p>Indian HNWIs face foreign exchange exposure, visas, and long travel. No rupee-denominated option exists.</p></article>
-        <article class="card"><h3>No domestic microgravity platform</h3><p>ISRO sounding rockets are not commercially available for private payloads; payloads face long queues and cost.</p></article>
-        <article class="card"><h3>First-mover window</h3><p>IN-SPACe opened the door — the first-mover window is open and unclaimed.</p></article>
-      </div>
-    </section>
-
-    <section id="solution" class="section">
-      <div class="grid2">
-        <div>
-          <h2>Prometheus-1</h2>
-          <p>A fully Indian-designed, Indian-built suborbital vehicle. One passenger. 120 km apogee. 2.7 minutes weightless. Recovered and reflown within 2 weeks.</p>
-          <ul class="stats">
-            <li><strong>120 km</strong><span>Apogee — past the Kármán Line</span></li>
-            <li><strong>2.7 min</strong><span>Continuous zero-gravity</span></li>
-            <li><strong>&lt; 2.5g</strong><span>Peak acceleration</span></li>
-            <li><strong>₹15 lakh</strong><span>Ticket price</span></li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div id="exploded" class="exploded">
-            <svg viewBox="0 0 200 300" class="exploded-svg" aria-hidden="true">
-              <g data-part="capsule" class="hotspot"><ellipse cx="100" cy="36" rx="36" ry="22" fill="#0b0b0b"/><circle cx="100" cy="36" r="8" fill="#E8A020"/></g>
-              <g data-part="control" class="hotspot"><rect x="70" y="80" width="60" height="20" rx="4" fill="#20262a"/></g>
-              <g data-part="carbon" class="hotspot"><rect x="58" y="110" width="84" height="110" rx="8" fill="#111"/></g>
-              <g data-part="fins" class="hotspot"><polygon points="50,190 30,230 70,210" fill="#111"/><polygon points="150,190 170,230 130,210" fill="#111"/></g>
-              <g data-part="propulsion" class="hotspot"><path d="M80 240 L120 240 L140 280 L60 280 Z" fill="#2b2b2b"/><path d="M100 276 C96 292, 104 292, 100 276" fill="#E8A020" opacity="0.45"/></g>
-              <g data-part="recovery" class="hotspot"><path d="M40 36 Q100 0 160 36" stroke="#E8A020" stroke-width="2" fill="none" opacity="0.6"/></g>
-            </svg>
-
-            <div class="exploded-controls">
-              <div id="partTitle" class="part-title">N₂O / Paraffin Hybrid Propulsion</div>
-              <div id="partBody" class="part-body">27.5 kN, 225.7s Isp, CEA-verified. N₂O is food-grade gas — no DRDO controls, no hazmat licensing.</div>
-              <div class="buttons">
-                <button data-set="propulsion">Propulsion</button>
-                <button data-set="carbon">Carbon</button>
-                <button data-set="recovery">Recovery</button>
-                <button data-set="control">Control</button>
-                <button data-set="capsule">Capsule</button>
+          <div class="tech-features">
+            <h3>Technology Highlights</h3>
+            <div class="features-grid">
+              <div class="feature-card">
+                <h4>N₂O Hybrid Engine</h4>
+                <p>Food-grade nitrous oxide — no DRDO controls, no hazmat licensing. Helium pressurisation prevents self-chilling.</p>
+              </div>
+              <div class="feature-card">
+                <h4>Carbon Fibre Integration</h4>
+                <p>Filament-wound construction. One machine produces motor case, oxidizer tank, and airframe tube.</p>
+              </div>
+              <div class="feature-card">
+                <h4>Dual-Redundant Recovery</h4>
+                <p>Capsule and booster recovered separately. Drogue at 10 km, main at 3 km. Crew Escape System valid to 50 km.</p>
+              </div>
+              <div class="feature-card">
+                <h4>Active Guidance</h4>
+                <p>4 electric-actuated fins. 100 Hz PID control from liftoff. Zero roll imparted to capsule.</p>
+              </div>
+              <div class="feature-card">
+                <h4>Premium Capsule</h4>
+                <p>3.6 m³ pressurised volume. 600mm panoramic dome window. Dual-redundant avionics.</p>
+              </div>
+              <div class="feature-card">
+                <h4>CEA-Verified Design</h4>
+                <p>Thermodynamic & ballistic modeling. Burn chamber tested & validated.</p>
               </div>
             </div>
           </div>
@@ -98,111 +148,199 @@
       </div>
     </section>
 
-    <section id="technology" class="section card center">
-      <h3>Technology highlights</h3>
-      <div class="grid3">
-        <div class="card"><h4>N₂O / Paraffin Hybrid</h4><p>27.5 kN, 225.7s Isp, helium pressurisation avoids self-chilling.</p></div>
-        <div class="card"><h4>Carbon fibre — one machine</h4><p>Filament winder produces motor case, oxidizer tank, airframe tube.</p></div>
-        <div class="card"><h4>Dual parachute recovery</h4><p>Capsule and booster recovered separately; drogue/main sequence.</p></div>
-      </div>
-    </section>
-
-    <section id="timeline" class="section">
-      <div class="container timeline-grid" id="timelineContainer">
-        <div class="timeline-list" id="timelineList">
-          <div class="milestone" data-index="0"><div class="dot"></div><div class="mil-text"><strong>M 1–2</strong><div>Subscale regression testing. Lock grain geometry + burn time.</div></div></div>
-          <div class="milestone" data-index="1"><div class="dot"></div><div class="mil-text"><strong>M 3–5</strong><div>Full-scale static fire (10 burns). Funding demo video.</div></div></div>
-          <div class="milestone" data-index="2"><div class="dot"></div><div class="mil-text"><strong>M 6–8</strong><div>Vehicle integration. Avionics HIL (100 simulated flights).</div></div></div>
-          <div class="milestone" data-index="3"><div class="dot"></div><div class="mil-text"><strong>M 9–11</strong><div>3× uncrewed flights: 30 km → 80 km → 120 km.</div></div></div>
-          <div class="milestone" data-index="4"><div class="dot"></div><div class="mil-text"><strong>M 12–14</strong><div>Crewed qualification. Test pilot. IN-SPACe certification.</div></div></div>
-          <div class="milestone" data-index="5"><div class="dot"></div><div class="mil-text"><strong>M 15–18</strong><div>Commercial ops begin. Medium lift development starts.</div></div></div>
-        </div>
-
-        <div class="timeline-visual">
-          <div class="progress-bar" id="progressBar" aria-hidden="true">
-            <div class="progress-fill"></div>
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap">
+      <div class="container">
+        <h2>Development Roadmap</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-number">1</span>
+            </div>
+            <div class="timeline-content">
+              <h4>M1-M2: Subscale Testing</h4>
+              <p>Regression testing. Lock grain geometry and burn time.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-number">2</span>
+            </div>
+            <div class="timeline-content">
+              <h4>M3-M5: Full-Scale Fire</h4>
+              <p>10x static burn tests. Funding demo video release.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-number">3</span>
+            </div>
+            <div class="timeline-content">
+              <h4>M6-M8: Integration</h4>
+              <p>Vehicle assembly. Avionics HIL with 100 simulated flights.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-number">4</span>
+            </div>
+            <div class="timeline-content">
+              <h4>M9-M11: Uncrewed Flights</h4>
+              <p>Three ascending test flights: 30 km → 80 km → 120 km.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-number">5</span>
+            </div>
+            <div class="timeline-content">
+              <h4>M12-M14: Crewed Qualification</h4>
+              <p>Test pilot flight. IN-SPACe certification.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-number">6</span>
+            </div>
+            <div class="timeline-content">
+              <h4>M15-M18: Operations</h4>
+              <p>Commercial launch. Medium-lift development begins.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="market" class="section">
-      <div class="card container market-grid">
-        <div>
-          <h3>Market Opportunity</h3>
-          <div class="bar" data-pct="100" aria-label="TAM — $2.5B by 2032"><div class="bar-fill"></div><div class="bar-label"><strong>$2.5B by 2032</strong><span>TAM — GLOBAL SUBORBITAL MARKET</span></div></div>
-          <div class="bar" data-pct="64" aria-label="SAM — ₹500+ crore"><div class="bar-fill"></div><div class="bar-label"><strong>₹500+ crore</strong><span>SAM — INDIA ADDRESSABLE</span></div></div>
-          <div class="bar" data-pct="38" aria-label="SOM — ₹225 crore"><div class="bar-fill"></div><div class="bar-label"><strong>₹225 crore</strong><span>SOM — 15 vehicles × 100 flights</span></div></div>
-        </div>
-
-        <div>
-          <div class="card"><strong>3.5 lakh+</strong><div class="muted">Indian dollar millionaires (2024, Knight Frank)</div></div>
-          <div class="card"><strong>$44B</strong><div class="muted">India space economy target by 2033 (IN-SPACe)</div></div>
-          <div class="card"><strong>0</strong><div class="muted">Domestic suborbital tourism operators today</div></div>
+    <!-- Market Section -->
+    <section id="market" class="market">
+      <div class="container">
+        <h2>Market Opportunity</h2>
+        <div class="market-metrics">
+          <div class="metric">
+            <div class="metric-bar">
+              <div class="metric-fill" style="width: 100%;"></div>
+            </div>
+            <h4>$2.5B</h4>
+            <p>Global suborbital market by 2032 (TAM)</p>
+          </div>
+          <div class="metric">
+            <div class="metric-bar">
+              <div class="metric-fill" style="width: 64%;"></div>
+            </div>
+            <h4>₹500+ Cr</h4>
+            <p>India addressable market (SAM)</p>
+          </div>
+          <div class="metric">
+            <div class="metric-bar">
+              <div class="metric-fill" style="width: 38%;"></div>
+            </div>
+            <h4>₹225 Cr</h4>
+            <p>15 vehicles × 100 flights (SOM)</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="funding" class="section">
-      <div class="container grid2">
-        <div>
-          <h3>The Ask</h3>
-          <p>₹1.5 crore seed round.</p>
-          <div class="alloc">
-            <div class="alloc-row" data-pct="43"><div class="alloc-bar"></div><div class="alloc-label"><span>Engineering salaries (18 months)</span><strong>₹65L</strong></div></div>
-            <div class="alloc-row" data-pct="17"><div class="alloc-bar"></div><div class="alloc-label"><span>IN-SPACe regulatory + legal</span><strong>₹25L</strong></div></div>
-            <div class="alloc-row" data-pct="13"><div class="alloc-bar"></div><div class="alloc-label"><span>Facility + operations</span><strong>₹20L</strong></div></div>
-            <div class="alloc-row" data-pct="9"><div class="alloc-bar"></div><div class="alloc-label"><span>Equipment + tooling</span><strong>₹13L</strong></div></div>
-            <div class="alloc-row" data-pct="5"><div class="alloc-bar"></div><div class="alloc-label"><span>Testing campaign</span><strong>₹8L</strong></div></div>
-            <div class="alloc-row" data-pct="13"><div class="alloc-bar"></div><div class="alloc-label"><span>Working capital</span><strong>₹19L</strong></div></div>
+    <!-- Funding Section -->
+    <section id="investors" class="investors">
+      <div class="container">
+        <h2>Funding Ask</h2>
+        <div class="funding-content">
+          <div class="funding-ask">
+            <div class="ask-amount">₹1.5 Crore</div>
+            <p>Seed round for 18-month development</p>
           </div>
-        </div>
-
-        <div>
-          <div class="card"><div class="muted">This funding unlocks</div>
+          <div class="funding-breakdown">
+            <h3>Capital Allocation</h3>
+            <div class="breakdown-items">
+              <div class="breakdown-item">
+                <span class="label">Engineering Salaries (18m)</span>
+                <span class="percentage">43%</span>
+                <span class="amount">₹65L</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="label">Regulatory & Legal</span>
+                <span class="percentage">17%</span>
+                <span class="amount">₹25L</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="label">Facility & Operations</span>
+                <span class="percentage">13%</span>
+                <span class="amount">₹20L</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="label">Equipment & Tooling</span>
+                <span class="percentage">9%</span>
+                <span class="amount">₹13L</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="label">Testing Campaign</span>
+                <span class="percentage">5%</span>
+                <span class="amount">₹8L</span>
+              </div>
+              <div class="breakdown-item">
+                <span class="label">Working Capital</span>
+                <span class="percentage">13%</span>
+                <span class="amount">₹19L</span>
+              </div>
+            </div>
+          </div>
+          <div class="funding-unlocks">
+            <h3>This Funding Unlocks</h3>
             <ul>
-              <li>Subscale regression data</li>
-              <li>Full-duration static fire</li>
+              <li>Subscale regression test data</li>
+              <li>Full-duration static fire tests</li>
               <li>Funding demo video</li>
               <li>IN-SPACe preliminary filing</li>
-              <li>Series A ready</li>
+              <li>Series A readiness</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="team" class="section card center">
-      <h3>Team</h3>
-      <div class="team-grid">
-        <div class="card">
-          <div class="name">Vishwajeeth V</div>
-          <div class="role">Founder &amp; CEO — VH4 Aerospace</div>
-          <p>Currently in 12th grade. Self-taught aerospace engineering since 2020 (started in 6th grade). Focused on hands-on propulsion, composites, and system integration.</p>
-        </div>
-        <div class="card">
-          <div class="muted">Key hires — next 6 months</div>
-          <ul><li>Propulsion Engineer</li><li>Avionics &amp; Controls Engineer</li><li>Structures / Composites Engineer</li></ul>
+    <!-- Team Section -->
+    <section id="team" class="team">
+      <div class="container">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-info">
+              <h3>Vishwajeeth V</h3>
+              <p class="role">Founder & CEO</p>
+              <p class="bio">In 12th grade. Self-taught aerospace engineering since 2020 (started in 6th grade). Deep expertise in propulsion systems, composite structures, and systems integration.</p>
+            </div>
+          </div>
+          <div class="team-hiring">
+            <h3>We're Hiring</h3>
+            <ul class="hiring-list">
+              <li>Propulsion Engineer</li>
+              <li>Avionics & Controls Engineer</li>
+              <li>Structures / Composites Engineer</li>
+            </ul>
+            <p class="hiring-note">Join us for the next 6 months</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="vision" class="section card center">
-      <h3>Prometheus is the beginning.</h3>
-      <p>Prometheus-1 is India's Grasshopper — the platform that builds the team, proves the manufacturing, and clears the regulatory path for what comes next.</p>
-    </section>
-
-    <footer class="section footer card center">
-      <div>
-        <h4>The most important space company India has never had. Until now.</h4>
-        <p class="muted">VH4 Aerospace · contact@vh4aerospace.in · vh4aerospace.in</p>
-        <p class="footer-ctas">
-          <a class="btn" href="mailto:contact@vh4aerospace.in">Contact</a>
-          <a class="btn" href="VH4_Aerospace_PitchDeck.html">Download Investor Deck</a>
-        </p>
+    <!-- Footer -->
+    <section class="cta">
+      <div class="container">
+        <h2>The Most Important Space Company India Has Never Had. Until Now.</h2>
+        <p>Prometheus-1 is India's Grasshopper — the platform that builds the team, proves manufacturing, and clears the regulatory path for what comes next.</p>
+        <div class="footer-buttons">
+          <a href="mailto:contact@vh4aerospace.in" class="btn btn-primary">Get in Touch</a>
+          <a href="VH4_Aerospace_PitchDeck.html" class="btn btn-secondary">Download Deck</a>
+        </div>
       </div>
-    </footer>
+    </section>
   </main>
+
+  <footer class="footer">
+    <p>VH4 Aerospace · contact@vh4aerospace.in · vh4aerospace.in</p>
+    <p>&copy; 2026. All rights reserved.</p>
+  </footer>
 
   <script src="app.js" defer></script>
 </body>
