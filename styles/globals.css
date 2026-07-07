@@ -5,16 +5,24 @@
 /* Global tiny overrides to support the premium feel requested */
 :root{
   --vh4-amber: #E8A020;
-  --bg: #FFFFFF; /* white-dominant base as per redesign brief */
+  --bg: #FFFFFF; /* light default */
+  --text:#0b0b0b;
   --muted:#6E7E92;
   --graphite:#111317;
+}
+
+/* Dark theme variables when .dark class is present on html */
+html.dark {
+  --bg: #07101F;
+  --text: #EDE8E1;
+  --muted: #6E7E92;
 }
 
 html,body,#__next{height:100%;}
 
 body{
   background:var(--bg);
-  color:#0b0b0b;
+  color:var(--text);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
@@ -25,6 +33,7 @@ body{
 
 /* Simple frosted nav */
 .frosted { backdrop-filter: blur(6px); background: rgba(255,255,255,0.6); }
+html.dark .frosted { background: rgba(8,12,18,0.6); }
 
 /* Small utility for subtle card lift */
 .card { box-shadow: 0 6px 20px rgba(16,24,40,0.06); border-radius: 12px; }
