@@ -28,10 +28,52 @@ html.dark .frosted{background:rgba(8,12,18,0.78);border:1px solid rgba(255,255,2
 .hero-grid{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center}
 .lede{color:var(--muted);max-width:44ch}
 .accent{color:var(--vh4-amber)}
-.btn{display:inline-block;padding:10px 14px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer}
 .btn.primary{background:#111;color:#fff;border:none}
-.hero-visual{display:flex;align-items:center;justify-content:center}
-.hero-svg{width:100%;height:100%}
+.btn:hover{opacity:0.8}
+.hero-visual{display:flex;align-items:center;justify-content:center;min-height:350px}
+
+/* Hero graphic - clean minimal design */
+.hero-graphic {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.earth {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 40%, #4a90e2, #2c3e50);
+  box-shadow: 0 -10px 40px rgba(74, 144, 226, 0.2);
+  opacity: 0.3;
+}
+
+.rocket-path {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border: 2px solid rgba(232, 160, 32, 0.2);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.rocket-icon {
+  position: absolute;
+  font-size: 60px;
+  top: 20px;
+  animation: rocketFloat 3s ease-in-out infinite;
+}
+
+@keyframes rocketFloat {
+  0%, 100% { transform: translateY(0px) rotate(-45deg); }
+  50% { transform: translateY(-30px) rotate(-45deg); }
+}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
@@ -44,16 +86,42 @@ html.dark .frosted{background:rgba(8,12,18,0.78);border:1px solid rgba(255,255,2
 .part-title{font-weight:600}
 .part-body{color:var(--muted);margin-top:6px}
 .exploded-controls .buttons{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.exploded-controls button{padding:8px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent}
+.exploded-controls button{padding:8px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer}
+.exploded-controls button:hover{background:rgba(0,0,0,0.04)}
 
 /* timeline */
-.timeline-grid{display:grid;grid-template-columns:1fr 260px;gap:20px;align-items:start}
+.timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
 .timeline-list{padding-left:10px}
 .milestone{display:flex;gap:12px;align-items:flex-start;padding:8px 0}
 .milestone .dot{width:12px;height:12px;border-radius:50%;background:#e2e8f0;margin-top:6px}
-.timeline-visual{display:flex;align-items:center;justify-content:center}
-.rocket-track{height:320px;width:100%;position:relative;background:linear-gradient(#fff,#f7fafc);border-radius:8px;padding:16px;overflow:hidden}
-html.dark .rocket-track{background:linear-gradient(#07101F,#031019)}
+.timeline-visual{display:flex;align-items:center;justify-content:center;min-height:320px}
+
+.progress-bar {
+  width: 100%;
+  max-width: 300px;
+  height: 8px;
+  background: rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+html.dark .progress-bar {
+  background: rgba(255,255,255,0.08);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--vh4-amber), #F5C060);
+  border-radius: 10px;
+  width: 33%;
+  animation: progressPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes progressPulse {
+  0%, 100% { width: 33%; }
+  50% { width: 66%; }
+}
 
 /* market/funding bars */
 .bar{margin:14px 0;padding:10px;border-radius:8px;position:relative;background:transparent}
@@ -69,13 +137,15 @@ html.dark .rocket-track{background:linear-gradient(#07101F,#031019)}
 
 /* small utilities */
 .muted{color:var(--muted)}
-.icon-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center}
+.icon-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.icon-btn:hover{background:rgba(0,0,0,0.04)}
 
 /* responsive */
 @media (max-width:900px){
   .grid3{grid-template-columns:1fr}
   .grid2{grid-template-columns:1fr}
   .hero-grid{grid-template-columns:1fr}
+  .timeline-grid{grid-template-columns:1fr}
   .nav-inner{gap:8px}
 }
 
