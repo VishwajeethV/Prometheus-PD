@@ -9,6 +9,7 @@ import Timeline from '../components/Timeline'
 import Market from '../components/Market'
 import Competitive from '../components/Competitive'
 import Funding from '../components/Funding'
+import Team from '../components/Team'
 import Vision from '../components/Vision'
 import Footer from '../components/Footer'
 
@@ -30,6 +31,7 @@ export default function Home(){
         <section id="timeline" className="section"><Timeline /></section>
         <section id="market" className="section"><Market /></section>
         <section id="competitive" className="section"><Competitive /></section>
+        <section id="team" className="section"><Team /></section>
         <section id="funding" className="section"><Funding /></section>
         <section id="vision" className="section"><Vision /></section>
         <section id="final" className="section"><Footer /></section>

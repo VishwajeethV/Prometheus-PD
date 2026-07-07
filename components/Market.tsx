@@ -1,13 +1,26 @@
+import { motion } from 'framer-motion'
+
 export default function Market(){
+  const bars = [
+    { label: 'TAM — GLOBAL SUBORBITAL MARKET', value: '$2.5B by 2032', pct: 100 },
+    { label: 'SAM — INDIA ADDRESSABLE', value: '₹500+ crore', pct: 64 },
+    { label: 'SOM — 15 VEHICLES × 100 FLIGHTS', value: '₹225 crore', pct: 38 }
+  ]
+
   return (
     <div className="h-full flex items-center justify-center px-8">
       <div className="max-w-5xl w-full grid md:grid-cols-2 gap-6">
         <div>
           <h3 className="text-xl font-semibold">Market Opportunity</h3>
           <div className="mt-4 grid gap-4">
-            <div className="card p-4 flex justify-between items-center"><span>TAM — GLOBAL SUBORBITAL MARKET</span><strong>$2.5B by 2032</strong></div>
-            <div className="card p-4 flex justify-between items-center"><span>SAM — INDIA ADDRESSABLE</span><strong>₹500+ crore</strong></div>
-            <div className="card p-4 flex justify-between items-center"><span>SOM — 15 VEHICLES × 100 FLIGHTS</span><strong>₹225 crore</strong></div>
+            {bars.map((b) => (
+              <div key={b.label} className="card p-4">
+                <div className="flex justify-between items-center mb-2"><div className="text-sm text-gray-700">{b.label}</div><div className="font-semibold">{b.value}</div></div>
+                <div className="w-full bg-gray-100 h-3 rounded overflow-hidden">
+                  <motion.div initial={{ width: 0 }} whileInView={{ width: `${b.pct}%` }} viewport={{ once: true }} transition={{ duration: 1.2, ease: 'easeOut' }} className="h-full bg-gradient-to-r from-blue-400 to-blue-200" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div>
