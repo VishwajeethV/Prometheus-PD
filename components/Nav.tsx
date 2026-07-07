@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 export default function Nav(){
   const [theme, setTheme] = useState<'light'|'dark'>(() => {
@@ -15,22 +15,45 @@ export default function Nav(){
     localStorage.setItem('theme', theme)
   }, [theme])
 
-  const toggle = () => setTheme(t => t === 'dark' ? 'light' : 'dark')
+  const toggle = useCallback(() => {
+    const prefersReduced = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    // add short transition class unless user requests reduced motion
+    if (!prefersReduced) {
+      document.documentElement.classList.add('theme-transition')
+      window.setTimeout(() => document.documentElement.classList.remove('theme-transition'), 380)
+    }
+    setTheme(t => t === 'dark' ? 'light' : 'dark')
+  }, [])
 
-  // Per your instruction: in dark mode use the white-bg logo, in light mode use transparent logo
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      // ignore if typing in an input/textarea or contentEditable
+      const target = e.target as HTMLElement
+      if (!target) return
+      const tag = target.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || target.isContentEditable) return
+
+      if (e.key.toLowerCase() === 't') {
+        toggle()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [toggle])
+
   const logoSrc = theme === 'dark' ? '/assets/logo-whitebg.svg' : '/assets/logo-transparent.svg'
 
   return (
     <motion.nav initial={{ y: -30, opacity:0 }} animate={{ y:0, opacity:1 }} className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl p-3 rounded-xl frosted flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <img src={logoSrc} alt="VH4 Aerospace" className="h-8 w-auto" />
+        <img src={logoSrc} alt="VH4 Aerospace" className="h-8 w-auto logo" />
       </div>
       <div className="flex items-center gap-3">
         <a href="#story" className="text-sm">Why VH4</a>
         <a href="#solution" className="text-sm">Solution</a>
         <a href="#timeline" className="text-sm">Roadmap</a>
         <a href="#funding" className="text-sm">Funding</a>
-        <button onClick={toggle} aria-label="Toggle theme" className="ml-3 p-2 rounded-full border" title="Toggle theme">
+        <button onClick={toggle} aria-label="Toggle theme (press T)" aria-keyshortcuts="T" className="ml-3 p-2 rounded-full border" title="Toggle theme">
           {theme === 'dark' ? (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#fff" />

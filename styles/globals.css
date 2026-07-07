@@ -31,9 +31,30 @@ body{
 .section-snap { scroll-snap-type: y mandatory; overflow-y: auto; height:100vh; }
 .section { scroll-snap-align: start; height:100vh; }
 
-/* Simple frosted nav */
-.frosted { backdrop-filter: blur(6px); background: rgba(255,255,255,0.6); }
-html.dark .frosted { background: rgba(8,12,18,0.6); }
+/* Frosted nav — stronger contrast + border + shadow for legibility */
+.frosted {
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.78);
+  border: 1px solid rgba(16,24,40,0.06);
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
+html.dark .frosted {
+  background: rgba(8,12,18,0.78);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+}
 
 /* Small utility for subtle card lift */
 .card { box-shadow: 0 6px 20px rgba(16,24,40,0.06); border-radius: 12px; }
+
+/* Theme transition helper — applied to html during theme changes */
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition body { transition: background-color .35s ease, color .35s ease; }
+  html.theme-transition .frosted { transition: background .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  html.theme-transition img.logo { transition: opacity .35s ease; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
