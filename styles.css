@@ -1,0 +1,86 @@
+:root{
+  --vh4-amber:#E8A020;
+  --bg:#FFFFFF;
+  --text:#0b0b0b;
+  --muted:#6E7E92;
+  --card-shadow: 0 6px 20px rgba(16,24,40,0.06);
+}
+html.dark { --bg:#07101F; --text:#EDE8E1; --muted:#89A0B3; }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.page{scroll-behavior:smooth}
+
+/* Nav */
+.nav{position:fixed;left:50%;transform:translateX(-50%);top:12px;width:92%;max-width:980px;padding:10px;border-radius:12px;z-index:60;display:block}
+.nav-inner{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.frosted{backdrop-filter:blur(8px);background:rgba(255,255,255,0.78);border:1px solid rgba(16,24,40,0.06);box-shadow:0 8px 24px rgba(16,24,40,0.06)}
+html.dark .frosted{background:rgba(8,12,18,0.78);border:1px solid rgba(255,255,255,0.06);box-shadow:0 8px 24px rgba(0,0,0,0.45)}
+.logo{height:36px}
+
+/* basic layout */
+.section{padding:72px 20px;min-height:60vh;display:flex;align-items:center}
+.container{max-width:1100px;margin:0 auto;width:100%}
+.center{text-align:center}
+.card{background:transparent;padding:18px;border-radius:12px;box-shadow:var(--card-shadow)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid2{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start}
+.hero-grid{display:grid;grid-template-columns:1fr 480px;gap:28px;align-items:center}
+.lede{color:var(--muted);max-width:44ch}
+.accent{color:var(--vh4-amber)}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent}
+.btn.primary{background:#111;color:#fff;border:none}
+.hero-visual{display:flex;align-items:center;justify-content:center}
+.hero-svg{width:100%;height:100%}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.stats li{list-style:none;padding:12px;border-radius:10px;background:rgba(0,0,0,0.02)}
+
+/* exploded */
+.exploded{display:flex;gap:12px;align-items:flex-start}
+.exploded-svg{width:220px;height:auto}
+.exploded-controls{flex:1}
+.part-title{font-weight:600}
+.part-body{color:var(--muted);margin-top:6px}
+.exploded-controls .buttons{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.exploded-controls button{padding:8px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent}
+
+/* timeline */
+.timeline-grid{display:grid;grid-template-columns:1fr 260px;gap:20px;align-items:start}
+.timeline-list{padding-left:10px}
+.milestone{display:flex;gap:12px;align-items:flex-start;padding:8px 0}
+.milestone .dot{width:12px;height:12px;border-radius:50%;background:#e2e8f0;margin-top:6px}
+.timeline-visual{display:flex;align-items:center;justify-content:center}
+.rocket-track{height:320px;width:100%;position:relative;background:linear-gradient(#fff,#f7fafc);border-radius:8px;padding:16px;overflow:hidden}
+html.dark .rocket-track{background:linear-gradient(#07101F,#031019)}
+
+/* market/funding bars */
+.bar{margin:14px 0;padding:10px;border-radius:8px;position:relative;background:transparent}
+.bar .bar-fill{height:14px;background:linear-gradient(90deg,var(--vh4-amber),#F5C060);border-radius:6px;width:0}
+.bar .bar-label{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:14px}
+.alloc-row{display:flex;gap:12px;align-items:center;margin:10px 0}
+.alloc-bar{height:12px;background:linear-gradient(90deg,var(--vh4-amber),#F5C060);width:0;border-radius:6px}
+.alloc-label{flex:1;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+
+/* footer */
+.footer{padding:36px 20px}
+.footer-ctas .btn{margin-right:8px}
+
+/* small utilities */
+.muted{color:var(--muted)}
+.icon-btn{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center}
+
+/* responsive */
+@media (max-width:900px){
+  .grid3{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .nav-inner{gap:8px}
+}
+
+/* theme transition helper (only applied dynamically when toggling) */
+html.theme-transition *{transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease;transition-property:background-color,color,border-color,box-shadow}
+@media (prefers-reduced-motion:reduce){
+  html.theme-transition *{transition:none !important}
+}
