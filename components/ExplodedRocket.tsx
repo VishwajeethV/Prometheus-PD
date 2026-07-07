@@ -32,49 +32,44 @@ export default function ExplodedRocket(){
   return (
     <div className="h-full flex flex-col md:flex-row items-center justify-center px-6 gap-8">
       <div className="w-full md:w-1/2 flex items-center justify-center">
-        <div className="relative w-[380px] h-[520px]">
-          {/* Simplified exploded SVG with groups — each group animates on active */}
+        <div className="relative w-[320px] h-[480px]">
+          {/* Clean, simple exploded SVG — layers grouped for accessibility and interaction */}
           <svg viewBox="0 0 200 300" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-            {/* Capsule */}
-            <g onClick={() => setActive('capsule')} style={{ cursor: 'pointer' }}>
-              <motion.ellipse animate={{ translateY: active === 'capsule' ? -6 : 0, scale: active === 'capsule' ? 1.03 : 1 }} transition={{ type: 'spring', stiffness: 200 }} cx="100" cy="50" rx="36" ry="26" fill="#0b0b0b" />
-              <motion.circle animate={{ translateY: active === 'capsule' ? -6 : 0 }} cx="100" cy="50" r="10" fill="#E8A020" />
+            {/* Capsule (top) */}
+            <g id="capsule" onClick={() => setActive('capsule')} style={{ cursor: 'pointer' }}>
+              <ellipse cx="100" cy="36" rx="36" ry="22" fill="#0b0b0b" />
+              <circle cx="100" cy="36" r="8" fill="#E8A020" />
             </g>
 
-            {/* Interstage / avionics */}
-            <g onClick={() => setActive('control')} style={{ cursor: 'pointer' }}>
-              <motion.rect animate={{ translateY: active === 'control' ? -4 : 0 }} x="74" y="90" width="52" height="28" rx="6" fill="#20262a" />
+            {/* Avionics / interstage */}
+            <g id="control" onClick={() => setActive('control')} style={{ cursor: 'pointer' }}>
+              <rect x="70" y="80" width="60" height="20" rx="4" fill="#20262a" />
             </g>
 
-            {/* Motor body */}
-            <g onClick={() => setActive('carbon')} style={{ cursor: 'pointer' }}>
-              <motion.rect animate={{ translateY: active === 'carbon' ? 4 : 0 }} x="60" y="128" width="80" height="110" rx="10" fill="#111" />
+            {/* Carbon-fiber motor case */}
+            <g id="carbon" onClick={() => setActive('carbon')} style={{ cursor: 'pointer' }}>
+              <rect x="58" y="110" width="84" height="110" rx="8" fill="#111" />
             </g>
 
-            {/* Propulsion / nozzle */}
-            <g onClick={() => setActive('propulsion')} style={{ cursor: 'pointer' }}>
-              <motion.polygon animate={{ translateY: active === 'propulsion' ? 8 : 0 }} points="80,248 120,248 140,288 60,288" fill="#2b2b2b" />
-              <motion.path animate={{ translateY: active === 'propulsion' ? 10 : 0 }} d="M100 278 C96 292, 104 292, 100 278" fill="url(#nozzle)" />
+            {/* Fins / active control */}
+            <g id="fins" onClick={() => setActive('control')} style={{ cursor: 'pointer' }}>
+              <polygon points="50,190 30,230 70,210" fill="#111" />
+              <polygon points="150,190 170,230 130,210" fill="#111" />
             </g>
 
-            {/* Fins */}
-            <g onClick={() => setActive('control')} style={{ cursor: 'pointer' }}>
-              <motion.polygon animate={{ rotate: active === 'control' ? 2 : 0, originX: '100px', originY: '200px' }} points="60,180 40,220 80,200" fill="#111" />
-              <motion.polygon animate={{ rotate: active === 'control' ? -2 : 0, originX: '100px', originY: '200px' }} points="140,180 160,220 120,200" fill="#111" />
+            {/* Nozzle / propulsion */}
+            <g id="propulsion" onClick={() => setActive('propulsion')} style={{ cursor: 'pointer' }}>
+              <path d="M80 240 L120 240 L140 280 L60 280 Z" fill="#2b2b2b" />
+              <path d="M100 276 C96 292, 104 292, 100 276" fill="#E8A020" opacity="0.45" />
             </g>
 
-            {/* Parachute / recovery element */}
-            <g onClick={() => setActive('recovery')} style={{ cursor: 'pointer' }}>
-              <motion.path animate={{ translateY: active === 'recovery' ? -8 : 0 }} d="M40 40 Q100 0 160 40" stroke="#E8A020" strokeWidth="2" fill="none" opacity="0.6" />
+            {/* Parachute arc (recovery) */}
+            <g id="recovery" onClick={() => setActive('recovery')} style={{ cursor: 'pointer' }}>
+              <path d="M40 36 Q100 0 160 36" stroke="#E8A020" strokeWidth="2" fill="none" opacity="0.6" />
             </g>
-
-            <defs>
-              <linearGradient id="nozzle" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stopColor="#E8A020" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#2b2b2b" stopOpacity="0.9" />
-              </linearGradient>
-            </defs>
           </svg>
+
+          {/* simple focus outline for accessibility */}
         </div>
       </div>
 
