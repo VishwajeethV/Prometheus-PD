@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global tiny overrides to support the premium feel requested */
+:root{
+  --vh4-amber: #E8A020;
+  --bg: #FFFFFF; /* white-dominant base as per redesign brief */
+  --muted:#6E7E92;
+  --graphite:#111317;
+}
+
+html,body,#__next{height:100%;}
+
+body{
+  background:var(--bg);
+  color:#0b0b0b;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Scroll snap container */
+.section-snap { scroll-snap-type: y mandatory; overflow-y: auto; height:100vh; }
+.section { scroll-snap-align: start; height:100vh; }
+
+/* Simple frosted nav */
+.frosted { backdrop-filter: blur(6px); background: rgba(255,255,255,0.6); }
+
+/* Small utility for subtle card lift */
+.card { box-shadow: 0 6px 20px rgba(16,24,40,0.06); border-radius: 12px; }
